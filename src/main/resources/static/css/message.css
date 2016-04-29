@@ -1,0 +1,13 @@
+.li-on {
+    color: #4cace2;
+}
+
+.paging-number {
+    float:left;
+    padding-left:5px;
+    cursor: pointer
+}
+.paging-element {
+    float:left;
+    padding-left:5px;
+}

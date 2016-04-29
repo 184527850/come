@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="UTF-8" />
+<link th:href='@{/css/bootstrap.css}' rel='stylesheet' />
+<link th:href='@{/css/bootstrap-theme.css}' rel='stylesheet' />
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<title>come.html</title>
+</head>
+
+<body>
+	<div class="bg-info">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">管理员后台</a>
+			</div>
+			<div style="float: right">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#"
+						class="dropdown-toggle glyphicon glyphicon-user"
+						data-toggle="dropdown"> admin <b class="caret"></b> </a>
+						<ul class="dropdown-menu">
+							<li><a href="#">设置</a></li>
+							<li><a href="#">更换</a></li>
+							<li><a href="#">退出</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!--下面-->
+	<div>
+		<!--导航 -->
+		<div class="col-sm-2 col-lg-2">
+			<ul class="nav nav-pills nav-stacked">
+				<li><a href="#">主页</a></li>
+				<li id="message-li"><a href="#">消息管理</a>
+				</li>
+				<li><a href="#">借款人信息</a></li>
+				<li><a href="#">借款审核</a></li>
+				<li><a href="#">免息券管理</a></li>
+			</ul>
+		</div>
+		<div class="col-lg-10 col-sm-10" layout:fragment="content"></div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	$(function() {
+		$("#menu li a").each(function(index, domEle) {
+			if ($(domEle).attr('href') == window.location.pathname) {
+				$(domEle).parents("li").addClass("active");
+			}
+		});
+	});
+</script>
+</html>
